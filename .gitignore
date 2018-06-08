@@ -188,3 +188,16 @@ pip-selfcheck.json
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+research_for_models/data
+research_for_models/to_cnn
+research_for_models/train
+research_for_models/test
+research_for_models/val
+research_for_models/google-images
+
+research_for_models/invalid-log
+research_for_models/log-1.txt
+research_for_models/to_cnn_1.zip
+
+research_for_models/models
