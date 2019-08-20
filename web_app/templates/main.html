@@ -63,11 +63,11 @@
                     res_banana.css("background-color", '#f4ed01');
                     res_banana.css('width', banana_p);
                 });
-                return false;
         }
 
         function processPredictions() {
             url = $('input[name="imgurl"]').val().trim();
+            alert(previous_url + "\n" + url);
             if (url === '') {
                 imgerr = $("#imgerr");
                 img = $("#check");
@@ -80,12 +80,11 @@
                 ress.css('visibility', 'hidden');
                 res_hotdog.css('visibility', 'hidden');
                 res_banana.css('visibility', 'hidden');
-                return false;
-            } else if (url === previous_url) {
-                return false;
+            } else if (url !== previous_url) {
+                makePredictions(url);
             }
             previous_url = url;
-            return makePredictions(url);
+            return false;
         }
 
         $(function() {
