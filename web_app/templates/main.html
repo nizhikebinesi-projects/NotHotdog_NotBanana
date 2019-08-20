@@ -16,6 +16,8 @@
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
     <script type="text/javascript">
+        var previous_url = "https://nhnb.herokuapp.com/";
+
         function makePredictions(url) {
             $.getJSON($SCRIPT_ROOT + '/_get_image_categories', {
                     url: url,
@@ -65,12 +67,24 @@
         }
 
         function processPredictions() {
-            url = $('input[name="imgurl"]').val();
-            if (url.trim() == '') {
+            url = $('input[name="imgurl"]').val().trim();
+            if (url === '') {
                 imgerr = $("#imgerr");
+                img = $("#check");
+                ress = $(".class-results");
+                res_hotdog = $("#hotdog");
+                res_banana = $("#banana");
+
+                img.css('visibility', 'hidden');
                 imgerr.css('visibility', 'hidden');
+                ress.css('visibility', 'hidden');
+                res_hotdog.css('visibility', 'hidden');
+                res_banana.css('visibility', 'hidden');
+                return false;
+            } else if (url === previous_url) {
                 return false;
             }
+            previous_url = url;
             return makePredictions(url);
         }
 
