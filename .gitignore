@@ -195,9 +195,19 @@ research_for_models/train
 research_for_models/test
 research_for_models/val
 research_for_models/google-images
+resear
 
 research_for_models/invalid-log
 research_for_models/log-1.txt
 research_for_models/to_cnn_1.zip
 
 research_for_models/models
+/research_for_models/food-101/
+/research_for_models/fruits-360/
+/research_for_models/insta_data/
+/research_for_models/chromedriver
+/research_for_models/dataset.csv
+/research_for_models/food41.zip
+/research_for_models/fruits.zip
+/research_for_models/research_for_models.tar.gz
+/research_for_models/tools/nothotdog_notbanana_data.csv
