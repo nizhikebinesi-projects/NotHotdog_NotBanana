@@ -11,6 +11,26 @@ body,html{
     background-size: cover;
 }
 
+.top_buffer {
+     margin-top:20px;
+    margin-bottom: 10px;
+}
+
+#error404 {
+    color: #1C005A;
+}
+
+#error404:hover {
+    color: #2A00FF;
+}
+
+div {
+    /*object-fit: cover;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    display: block;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -199,9 +219,9 @@ img {
     /*height: 10%;*/
 /*}*/
 
-/*.row {*/
-    /*padding-top: 5%;*/
-/*}*/
+.search_div {
+    margin-top: 10%;
+}
 
 /*.container {*/
     /*height: 100%;*/

@@ -21,6 +21,7 @@ def get_image_categories():
             return jsonify(error=501)  # , 'This image could not be loaded')#, 404
 
         img = imread(url)
+        h, w, c = img.shape
 
         hotdog = str(round(100*random(), 2))
         banana = str(round(100*random(), 2))
@@ -29,6 +30,8 @@ def get_image_categories():
             # src=url,
             hotdog=hotdog,
             banana=banana,
+            w=w,
+            h=h
         )
     except Exception as e:
         # TODO
@@ -38,7 +41,8 @@ def get_image_categories():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return jsonify(error=404, text=(str(e))), 404
+    return render_template('404.html'), 404
+    #jsonify(error=404, text=(str(e))), 404
 
 
 @app.route('/', methods=['GET', 'POST'])
