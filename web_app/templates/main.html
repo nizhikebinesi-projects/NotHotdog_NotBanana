@@ -58,23 +58,32 @@
                 // mg.css('position', 'relative');
                     img.css("visibility", 'visible');
 
-                    hotdog_p = data.hotdog + "%";
+                    hotdog_p = data.hotdog  + "%";
                     banana_p = data.banana + "%";
 
+                    // if (hotdog_p >= 5 || banana_p >= 10) {
                     ress.css('position', 'relative');
                     ress.css('visibility', 'visible');
                     ress.css('width', "90%");//img.css('width'));
-                    // ress.css('position', 'relative');;
+                // ress.css('position', 'relative');;
+                    // }
+                    // if (hotdog_p >= 5) {
+                        res_hotdog.text(hotdog_p);
+                        res_hotdog.css("visibility", 'visible');
+                        res_hotdog.css("background-color", '#ff4639');
+                        res_hotdog.css('width', hotdog_p);
+                    // } else {
+                    //     res_hotdog.css("visibility", 'hidden');
+                    // }
 
-                    res_hotdog.text(hotdog_p);
-                    res_hotdog.css("visibility", 'visible');
-                    res_hotdog.css("background-color", '#ff4639');
-                    res_hotdog.css('width', hotdog_p);
-
-                    res_banana.text(banana_p);
-                    res_banana.css("visibility", 'visible');
-                    res_banana.css("background-color", '#f4ed01');
-                    res_banana.css('width', banana_p);
+                    // if (banana_p >= 10) {
+                        res_banana.text(banana_p);
+                        res_banana.css("visibility", 'visible');
+                        res_banana.css("background-color", '#f4ed01');
+                        res_banana.css('width', banana_p);
+                    // } else {
+                    //     res_banana.css("visibility", 'hidden');
+                    // }
                 });
         }
 
@@ -115,11 +124,24 @@
         });
 
         const example_url = "https://memepedia.ru/wp-content/uploads/2019/08/w5m1lo77daa-kopiya.jpg";
+        const example_url2 = 'https://avatars.mds.yandex.net/get-pdb/225396/31d5c6e9-4558-44b4-bba8-68c453773af8/s1200';
+        const example_url3 = 'https://qph.fs.quoracdn.net/main-qimg-516df41ff8170cc1f30c0e484abb29de'
+        const example_url4 = "https://www.wikihow.com/images/thumb/3/3d/Make-a-Peanut-Butter-and-Jelly-Banana-Dog-Step-3.jpg/aid58076-v4-728px-Make-a-Peanut-Butter-and-Jelly-Banana-Dog-Step-3.jpg"
+
 
         $(function() {
             // example =
             $('#search_example').bind('click', function() {
                 $('.search_input').val(example_url)
+            });
+            $('#nhb').bind('click', function() {
+                $('.search_input').val(example_url3)
+            });
+            $('#hnb').bind('click', function() {
+                $('.search_input').val(example_url2)
+            });
+            $('#hb').bind('click', function() {
+                $('.search_input').val(example_url4)
             });
         });
 
@@ -142,6 +164,11 @@
             </div>
             <div class="col">
                 <div class="class-results">
+<!--                    <h4 style="text-align: center; position: relative;">Classes on image</h4>-->
+<!--                    <div>-->
+<!--                    <nav class="clss" id="hotdog" style="color: white">Hotdog</nav>-->
+<!--                    <nav class="clss"  id="banana">Banana</nav>-->
+<!--                    </div>-->
                     <div style="color: #e20c20;">Hotdog?</div>
                     <div class="clss">
                         <div id="hotdog" style="color: white;"></div>
@@ -185,7 +212,18 @@
 
             </div>
 <!--    <form onsubmit="return false;">-->
-        <div class="row w-100 justify-content-center"><a href="#" id="search_example">Example</a></div>
+        <div class="row w-100 justify-content-center">
+            <a href="#" id="search_example">Example without hotdog and banana</a>
+        </div>
+        <div class="row w-100 justify-content-center">
+            <a href="#" id="nhb">Example of banana</a>
+        </div>
+        <div class="row w-100 justify-content-center">
+            <a href="#" id="hnb">Example of hotdog</a>
+        </div>
+        <div class="row w-100 justify-content-center">
+            <a href="#" id="hb">Example of banana & hotdog</a>
+        </div>
 <!--    </form>-->
                 <div class="row w-100 justify-content-center" id="imgerr">
                         This image could not be loaded
